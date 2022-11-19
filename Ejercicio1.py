@@ -59,3 +59,9 @@ class nodoArbol(object):
             nodoArbol.inorden(raiz.izq)
             print(raiz.info)
             nodoArbol.inorden(raiz.der)
+
+    def preorden(raiz):
+        if raiz is not None:
+            print(raiz.info)
+            nodoArbol.preorden(raiz.izq)
+            nodoArbol.preorden(raiz.der)
