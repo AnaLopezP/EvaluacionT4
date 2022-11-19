@@ -53,3 +53,9 @@ class nodoArbol(object):
             else:
                 pos = nodoArbol.buscar(raiz.der, clave)
         return pos
+
+    def inorden(raiz):
+        if raiz is not None:
+            nodoArbol.inorden(raiz.izq)
+            print(raiz.info)
+            nodoArbol.inorden(raiz.der)
