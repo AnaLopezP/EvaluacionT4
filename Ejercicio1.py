@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 class nodoArbol(object):
     def __init__(self, info):
         self.izq = None
@@ -72,6 +74,10 @@ class nodoArbol(object):
             print(raiz.info)
             nodoArbol.postorden(raiz.izq)
 
+class info():
+    def __init__(self, simbolo, frecuencia):
+        self.simbolo = simbolo
+        self.frecuencia = frecuencia
 
 frecuencias =  {'A': 0.2, 
                 'F': 0.17,
@@ -80,3 +86,14 @@ frecuencias =  {'A': 0.2,
                 '0': 0.05,
                 'M': 0.09,
                 'T': 0.15}
+
+      
+lista = []
+frecuencias = sorted(frecuencias.items(), key= itemgetter(1))
+frecuencias = dict(frecuencias)
+for i in frecuencias:
+    dato = info(i, frecuencias[i])
+    raiz = nodoArbol(dato)
+    lista.append(raiz)
+print(lista)
+
