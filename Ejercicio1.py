@@ -84,6 +84,8 @@ class info():
     def __init__(self, simbolo, frecuencia):
         self.simbolo = simbolo
         self.frecuencia = frecuencia
+    def __str__(self):
+        return "Letra: " + str(self.simbolo) + " Frecuencia: " + str(self.frecuencia)
 
     
 
@@ -103,7 +105,7 @@ for i in frecuencias:
     dato = info(i, frecuencias[i])
     raiz = nodoArbol(dato)
     lista.append(raiz)
-print(lista)
+#print(lista)
 lista = sorted(lista)
 
 while len(lista) > 1:
@@ -116,5 +118,8 @@ while len(lista) > 1:
     lista.append(ArbolNuevo)
     lista = sorted(lista)
 
-for i in range(len(lista)):
-    print(lista[i])
+'''for i in range(len(lista)):
+    print(lista[i])'''
+
+ArbolFinal = lista.pop()
+nodoArbol.inorden(ArbolFinal)
