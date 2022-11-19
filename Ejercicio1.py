@@ -42,3 +42,14 @@ class nodoArbol(object):
         else:
             raiz.der, aux = nodoArbol.remplazar(raiz.der)
         return raiz, aux
+
+    def buscar(raiz, clave):
+        pos = None
+        if raiz is not None:
+            if raiz.info == clave:
+                pos = raiz
+            elif clave < raiz.info:
+                pos = nodoArbol.buscar(raiz.izq, clave)
+            else:
+                pos = nodoArbol.buscar(raiz.der, clave)
+        return pos
