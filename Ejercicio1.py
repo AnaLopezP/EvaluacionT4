@@ -5,7 +5,10 @@ class nodoArbol(object):
         self.izq = None
         self.der = None
         self.info = info
-    
+
+    def __gt__(self, nodoArbol):
+        return self.info.frecuencia> nodoArbol.info.frecuencia
+
     def eliminar_nodo(raiz, clave):
         x = None
         if raiz is not None:
@@ -79,6 +82,8 @@ class info():
         self.simbolo = simbolo
         self.frecuencia = frecuencia
 
+    
+
 frecuencias =  {'A': 0.2, 
                 'F': 0.17,
                 '1': 0.13,
@@ -96,4 +101,4 @@ for i in frecuencias:
     raiz = nodoArbol(dato)
     lista.append(raiz)
 print(lista)
-
+lista = sorted(lista)
