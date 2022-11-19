@@ -106,12 +106,15 @@ for i in frecuencias:
 print(lista)
 lista = sorted(lista)
 
-ArbolAux1 = lista.pop(0)
-ArbolAux2 = lista.pop(0)
-datoaux = info(None, ArbolAux1.info.frecuencia+ArbolAux2.info.frecuencia)
-ArbolNuevo = nodoArbol(datoaux)
-ArbolNuevo.izq = ArbolAux1
-ArbolNuevo.der = ArbolAux2
-lista.append(ArbolNuevo)
-lista = sorted(lista)
+while len(lista) > 1:
+    ArbolAux1 = lista.pop(0)
+    ArbolAux2 = lista.pop(0)
+    datoaux = info(None, ArbolAux1.info.frecuencia+ArbolAux2.info.frecuencia)
+    ArbolNuevo = nodoArbol(datoaux)
+    ArbolNuevo.izq = ArbolAux1
+    ArbolNuevo.der = ArbolAux2
+    lista.append(ArbolNuevo)
+    lista = sorted(lista)
 
+for i in range(len(lista)):
+    print(lista[i])
