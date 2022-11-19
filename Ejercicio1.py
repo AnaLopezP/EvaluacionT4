@@ -65,3 +65,10 @@ class nodoArbol(object):
             print(raiz.info)
             nodoArbol.preorden(raiz.izq)
             nodoArbol.preorden(raiz.der)
+
+    def postorden(raiz):
+        if raiz is not None:
+            nodoArbol.postorden(raiz.der)
+            print(raiz.info)
+            nodoArbol.postorden(raiz.izq)
+
