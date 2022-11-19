@@ -9,6 +9,9 @@ class nodoArbol(object):
     def __gt__(self, nodoArbol):
         return self.info.frecuencia> nodoArbol.info.frecuencia
 
+    def __str__(self):
+        return "Letra: " + str(self.info.simbolo) + " Frecuencia: " + str(self.info.frecuencia)
+
     def eliminar_nodo(raiz, clave):
         x = None
         if raiz is not None:
@@ -102,3 +105,13 @@ for i in frecuencias:
     lista.append(raiz)
 print(lista)
 lista = sorted(lista)
+
+ArbolAux1 = lista.pop(0)
+ArbolAux2 = lista.pop(0)
+datoaux = info(None, ArbolAux1.info.frecuencia+ArbolAux2.info.frecuencia)
+ArbolNuevo = nodoArbol(datoaux)
+ArbolNuevo.izq = ArbolAux1
+ArbolNuevo.der = ArbolAux2
+lista.append(ArbolNuevo)
+lista = sorted(lista)
+
