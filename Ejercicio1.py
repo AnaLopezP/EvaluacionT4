@@ -30,3 +30,15 @@ class nodoArbol(object):
         else:
             raiz.der = nodoArbol.insertar_nodo(raiz.der, dato)
         return raiz
+
+    def arbol_vacio(raiz):
+        return raiz is None
+
+    def remplazar(raiz):
+        aux = None
+        if raiz.der is None:
+            aux = raiz
+            raiz = raiz.izq
+        else:
+            raiz.der, aux = nodoArbol.remplazar(raiz.der)
+        return raiz, aux
