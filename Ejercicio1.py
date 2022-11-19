@@ -22,4 +22,11 @@ class nodoArbol(object):
                     raiz.info = aux.info
         return raiz, x
 
-    
+    def insertar_nodo(raiz, dato):
+        if raiz is None:
+            raiz = nodoArbol(dato)
+        elif dato < raiz.info:
+            raiz.izq = nodoArbol.insertar_nodo(raiz.izq, dato)
+        else:
+            raiz.der = nodoArbol.insertar_nodo(raiz.der, dato)
+        return raiz
