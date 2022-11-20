@@ -80,13 +80,25 @@ class nodoArbol(object):
             print(raiz.info)
             nodoArbol.postorden(raiz.izq)
 
-    def camino(raiz):
-        if raiz is not None:
-            if raiz.der == None and raiz.izq == None:
-                print('He llegado a una hoja: ' + str(raiz.info))
-            else:
-                nodoArbol.camino(raiz.izq)
-                nodoArbol.camino(raiz.der)
+    def camino(raiz, clave, encontrado, cadena):
+        if not encontrado:
+            if raiz is not None:
+                if raiz.der == None and raiz.izq == None:
+                    print('He llegado a una hoja: ' + str(raiz.info))
+                    if str(raiz.info.simbolo) == clave:
+                        print('La he encontrado: ' + str(raiz.info.simbolo))
+                        encontrado = True
+                        print(cadena) 
+                    
+                else:
+                    cadena.append('0')
+                    encontrado, cadena = nodoArbol.camino(raiz.izq, clave, encontrado, cadena)
+                    cadena.append('1')
+                    encontrado, cadena = nodoArbol.camino(raiz.der, clave, encontrado, cadena)
+                    
+          
+        return encontrado, cadena
+
 
 class info():
     def __init__(self, simbolo, frecuencia):
@@ -132,4 +144,5 @@ while len(lista) > 1:
 ArbolFinal = lista.pop()
 #nodoArbol.inorden(ArbolFinal)   
 
-nodoArbol.camino(ArbolFinal)
+x, y =nodoArbol.camino(ArbolFinal, 'T', False, [])
+print(x, y)
