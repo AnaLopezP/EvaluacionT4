@@ -21,7 +21,7 @@ def crear_pok(fila):
     return pokem
 
 def cargar_arbol():
-    arboll = None
+    arboll = arbol_pokemon.nodoArbol(None)
     for i in range(len(df)):
         pok = crear_pok(df.iloc[i])
         print(pok.nombre)
