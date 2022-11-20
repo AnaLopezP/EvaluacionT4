@@ -89,7 +89,6 @@ class nodoArbol(object):
                         print('La he encontrado: ' + str(raiz.info.simbolo))
                         encontrado = True
                         print(cadena) 
-                    
                 else:
                     cadena.append('0')
                     encontrado, cadena = nodoArbol.camino(raiz.izq, clave, encontrado, cadena)
