@@ -87,14 +87,17 @@ class nodoArbol(object):
                     print('He llegado a una hoja: ' + str(raiz.info))
                     if str(raiz.info.simbolo) == clave:
                         print('La he encontrado: ' + str(raiz.info.simbolo))
-                        encontrado = True
-                        print(cadena) 
+                        encontrado = True 
+                        print('La cadena definitiva es: ' + str(cadena))
                 else:
                     cadena.append('0')
                     encontrado, cadena = nodoArbol.camino(raiz.izq, clave, encontrado, cadena)
+                    if not encontrado:
+                        cadena.pop()
                     cadena.append('1')
                     encontrado, cadena = nodoArbol.camino(raiz.der, clave, encontrado, cadena)
-                    
+                    if not encontrado:
+                        cadena.pop()
           
         return encontrado, cadena
 
@@ -116,7 +119,7 @@ frecuencias =  {'A': 0.2,
                 'M': 0.09,
                 'T': 0.15}
 
-      
+    
 lista = []
 frecuencias = sorted(frecuencias.items(), key= itemgetter(1))
 frecuencias = dict(frecuencias)
@@ -137,11 +140,10 @@ while len(lista) > 1:
     lista.append(ArbolNuevo)
     lista = sorted(lista)
 
-'''for i in range(len(lista)):
-    print(lista[i])'''
 
 ArbolFinal = lista.pop()
 #nodoArbol.inorden(ArbolFinal)   
-
-x, y =nodoArbol.camino(ArbolFinal, 'T', False, [])
+l = []
+x, y =nodoArbol.camino(ArbolFinal, 'F', False, l)
 print(x, y)
+
