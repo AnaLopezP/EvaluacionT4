@@ -30,7 +30,7 @@ class nodoArbol(object):
         '''
         Insertamos el nodo en el árbol
         '''
-        if raiz is None:
+        if raiz.info is None:
             raiz = nodoArbol(dato)                        
         elif dato.clave < raiz.info.clave:
             raiz.izq = nodoArbol.insertar_nodo(raiz.izq, dato)

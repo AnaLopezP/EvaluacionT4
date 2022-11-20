@@ -1,4 +1,4 @@
-import Ejercicio1
+import arbol_pokemon
 import pandas as pd
 import numpy as np
 df = pd.read_csv('pokemon.csv')
@@ -13,15 +13,18 @@ class pokemon():
         self.tipo1 = tipo1
         self.tipo2 = tipo2
 
-pokem = pokemon(None, None, None, None)
-arbol_pokemon = Ejercicio1.nodoArbol(pokem)
+
+
 
 def crear_pok(fila):
     pokem = pokemon(fila['Name'], fila['Type 1'], fila['Type 2'], fila['#'], fila['#'])
     return pokem
 
-for i in range(len(df)):
-    pok = crear_pok(df.iloc[i])
-    arbol_pokemon.insertar_nodo(pok)
+def cargar_arbol():
+    arboll = None
+    for i in range(len(df)):
+        pok = crear_pok(df.iloc[i])
+        print(pok.nombre)
+        arboll.insertar_nodo(pok)
 
-arbol_pokemon.inorden()
+cargar_arbol()
