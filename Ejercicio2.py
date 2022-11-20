@@ -6,7 +6,8 @@ print(df)
 
 
 class pokemon():
-    def __init__(self, nombre, tipo1, tipo2, numero):
+    def __init__(self, nombre, tipo1, tipo2, numero, clave):
+        self.clave = clave
         self.numero = numero
         self.nombre = nombre
         self.tipo1 = tipo1
@@ -16,7 +17,7 @@ pokem = pokemon(None, None, None, None)
 arbol_pokemon = Ejercicio1.nodoArbol(pokem)
 
 def crear_pok(fila):
-    pokem = pokemon(fila['Name'], fila['Type 1'], fila['Type 2'], fila['#'])
+    pokem = pokemon(fila['Name'], fila['Type 1'], fila['Type 2'], fila['#'], fila['#'])
     return pokem
 
 for i in range(len(df)):
