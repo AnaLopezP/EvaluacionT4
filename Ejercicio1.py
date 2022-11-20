@@ -140,10 +140,13 @@ while len(lista) > 1:
     lista.append(ArbolNuevo)
     lista = sorted(lista)
 
+'''for i in range(len(lista)):
+    print(lista[i])'''
 
 ArbolFinal = lista.pop()
 #nodoArbol.inorden(ArbolFinal)   
 l = []
-x, y =nodoArbol.camino(ArbolFinal, 'F', False, l)
+x, y =nodoArbol.camino(ArbolFinal, 'A', False, l)
 print(x, y)
-
+y.pop()
+print(y)
