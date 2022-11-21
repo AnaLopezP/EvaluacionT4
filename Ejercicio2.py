@@ -73,3 +73,5 @@ a3_tipo = arbol_pokemon.nodoArbol(lista[0])
 crear_arbol(a1_numero, 'Numero')
 crear_arbol(a2_nombre, 'Nombre')
 crear_arbol(a3_tipo, 'Tipo 1')
+
+a2_nombre.preorden()
