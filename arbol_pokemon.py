@@ -74,11 +74,15 @@ class nodoArbol(object):
     def buscar_bien(raiz, caracter):
         if caracter in raiz.info['Nombre']:
             print(raiz.info['Nombre'])
-            nodoArbol.buscar_bien(raiz.izq, caracter)
-            nodoArbol.buscar_bien(raiz.der, caracter)
+            if raiz.der is not None:
+                nodoArbol.buscar_bien(raiz.der, caracter)
+            if raiz.izq is not None:
+                nodoArbol.buscar_bien(raiz.izq, caracter)
         else:
-            nodoArbol.buscar_bien(raiz.izq, caracter)
-            nodoArbol.buscar_bien(raiz.der, caracter)
+            if raiz.der is not None:
+                nodoArbol.buscar_bien(raiz.der, caracter)
+            if raiz.izq is not None:
+                nodoArbol.buscar_bien(raiz.izq, caracter)
     
     def inorden(raiz):
         '''

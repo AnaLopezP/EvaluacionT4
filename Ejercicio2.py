@@ -75,6 +75,6 @@ crear_arbol(a2_nombre, 'Nombre')
 crear_arbol(a3_tipo, 'Tipo 1')
 
 #a2_nombre.preorden()
-a2_nombre.buscar_bien('Bul')
+a2_nombre.buscar_bien('l')
 
 
