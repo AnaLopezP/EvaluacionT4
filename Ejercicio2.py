@@ -6,14 +6,15 @@ print(df)
 
 
 class pokemon():
+    '''
+    clase pokemon, que va a ser la informacion del nodo en el árbol
+    '''
     def __init__(self, nombre, tipo1, tipo2, numero, clave):
         self.clave = clave
         self.numero = numero
         self.nombre = nombre
         self.tipo1 = tipo1
         self.tipo2 = tipo2
-
-
 
 
 def crear_pok(fila, filtro):
@@ -32,6 +33,7 @@ def cargar_arbol(filtro):
         pok = crear_pok(df.iloc[i], filtro)
         arboll.insertar_nodo(pok)
 
+#creamos los árboles por los tres parámetros
 cargar_arbol('#')
 cargar_arbol('Name')
 cargar_arbol('Type 1')
