@@ -11,9 +11,9 @@ class nodoArbol(object):
         '''
         x = None
         if raiz is not None:
-            if clave < raiz.info.clave:
+            if clave < raiz.info:
                 raiz.izq, x = nodoArbol.eliminar_nodo(raiz.izq, clave)
-            elif clave > raiz.info.clave:
+            elif clave > raiz.info:
                 raiz.der, x = nodoArbol.eliminar_nodo(raiz.der, clave)
             else:
                 x = raiz.info
@@ -26,16 +26,16 @@ class nodoArbol(object):
                     raiz.info = aux.info
         return raiz, x
     
-    def insertar_nodo(raiz, dato):
+    def insertar_nodo(raiz, dato, filtro):
         '''
         Insertamos el nodo en el árbol
         '''
-        if raiz.info is None:
+        if raiz is None:
             raiz = nodoArbol(dato)                        
-        elif dato.clave < raiz.info.clave:
-            raiz.izq = nodoArbol.insertar_nodo(raiz.izq, dato)
+        elif dato[filtro] < raiz.info[filtro]:
+            raiz.izq = nodoArbol.insertar_nodo(raiz.izq, dato, filtro)
         else:
-            raiz.der = nodoArbol.insertar_nodo(raiz.der, dato)
+            raiz.der = nodoArbol.insertar_nodo(raiz.der, dato, filtro)
         return raiz
     
     def arbolvacio(raiz):
@@ -63,9 +63,9 @@ class nodoArbol(object):
         '''
         pos = None
         if raiz is not None:
-            if raiz.info.clave == clave:
+            if raiz.info == clave:
                 pos = raiz
-            elif clave < raiz.info.clave:
+            elif clave < raiz.info:
                 pos = nodoArbol.buscar(raiz.izq, clave)
             else:
                 pos = nodoArbol.buscar(raiz.der, clave)
