@@ -71,6 +71,15 @@ class nodoArbol(object):
                 pos = nodoArbol.buscar(raiz.der, clave)
         return pos
                 
+    def buscar_bien(raiz, caracter):
+        if caracter in raiz.info['Nombre']:
+            print(raiz.info['Nombre'])
+            nodoArbol.buscar_bien(raiz.izq, caracter)
+            nodoArbol.buscar_bien(raiz.der, caracter)
+        else:
+            nodoArbol.buscar_bien(raiz.izq, caracter)
+            nodoArbol.buscar_bien(raiz.der, caracter)
+    
     def inorden(raiz):
         '''
         Hace el barrido inorden del árbol
