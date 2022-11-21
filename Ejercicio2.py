@@ -16,15 +16,22 @@ class pokemon():
 
 
 
-def crear_pok(fila):
-    pokem = pokemon(fila['Name'], fila['Type 1'], fila['Type 2'], fila['#'], fila['#'])
+def crear_pok(fila, filtro):
+    '''
+    funcion que nos crea un objeto llamado pokemon, con un filtro para crear los árboles
+    '''
+    pokem = pokemon(fila['Name'], fila['Type 1'], fila['Type 2'], fila['#'], fila[filtro])
     return pokem
 
-def cargar_arbol():
+def cargar_arbol(filtro):
+    '''
+    funcion que crea el árbol dependiendo del atributo filtro del pokemon
+    '''
     arboll = arbol_pokemon.nodoArbol(None)
     for i in range(len(df)):
-        pok = crear_pok(df.iloc[i])
-        print(pok.nombre)
+        pok = crear_pok(df.iloc[i], filtro)
         arboll.insertar_nodo(pok)
 
-cargar_arbol()
+cargar_arbol('#')
+cargar_arbol('Name')
+cargar_arbol('Type 1')
