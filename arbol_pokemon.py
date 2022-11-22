@@ -118,6 +118,19 @@ class nodoArbol(object):
             nodoArbol.inorden(raiz.izq)
             print(raiz.info)
             nodoArbol.inorden(raiz.der)
+
+    def tipos(raiz, lista):
+        '''
+        Buscamos todos los tipos de pokemons que hay y los añadimos a una lista sin repetir
+        '''
+        if raiz is not None:
+            if raiz.info['Tipo 1'] not in lista:
+                lista.append(raiz.info['Tipo 1'])
+                nodoArbol.tipos(raiz.izq, lista)
+                nodoArbol.tipos(raiz.der, lista)
+            else:
+                nodoArbol.tipos(raiz.izq, lista)
+                nodoArbol.tipos(raiz.der, lista)
     
     def preorden(raiz):
         '''

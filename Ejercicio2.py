@@ -118,3 +118,15 @@ print('Como Tyrantrum es de tipo roca y dragón, es fuerte contra los mismos que
 deb_tyrantrum = deb_lycanroc
 a3_tipo.buscar_xtipo('Dragon', deb_tyrantrum)
 print(deb_tyrantrum)
+print('\n')
+tipos = []
+a3_tipo.tipos(tipos)
+print('--------------------TIPOS DE POKEMONS---------------------')
+print(tipos)
+
+for i in tipos:
+    todos = []
+    a3_tipo.buscar_xtipo(i, todos)
+    print('\n')
+    print('NUMERO DE POKEMONS TIPO: ' + str(i))
+    print(len(todos))
