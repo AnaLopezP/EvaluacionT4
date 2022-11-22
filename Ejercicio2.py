@@ -105,3 +105,16 @@ deb_jolteon = []
 a3_tipo.buscar_xtipo('Water', deb_jolteon)
 a3_tipo.buscar_xtipo('Flying', deb_jolteon)
 print(deb_jolteon)
+print('\n')
+print('Los pokemons débiles a Lycanroc son los de tipo: Bicho, fuego, hielo y volador')
+deb_lycanroc = []
+a3_tipo.buscar_xtipo('Bug', deb_lycanroc)
+a3_tipo.buscar_xtipo('Fire', deb_lycanroc)
+a3_tipo.buscar_xtipo('Ice', deb_lycanroc)
+a3_tipo.buscar_xtipo('Flying', deb_lycanroc)
+print(deb_lycanroc)
+print('\n')
+print('Como Tyrantrum es de tipo roca y dragón, es fuerte contra los mismos que Lycanroc más los que son débiles contra tipo dragón, que es el tipo dragón')
+deb_tyrantrum = deb_lycanroc
+a3_tipo.buscar_xtipo('Dragon', deb_tyrantrum)
+print(deb_tyrantrum)
