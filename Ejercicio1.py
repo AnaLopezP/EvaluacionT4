@@ -1,4 +1,4 @@
-from operator import itemgetter
+
 
 class nodoArbol(object):
     def __init__(self, info):
@@ -111,7 +111,7 @@ class info():
 
     
 
-frecuencias =  {'A': 0.2, 
+'''frecuencias =  {'A': 0.2, 
                 'F': 0.17,
                 '1': 0.13,
                 '3': 0.21,
@@ -140,8 +140,9 @@ while len(lista) > 1:
     lista.append(ArbolNuevo)
     lista = sorted(lista)
 
-'''for i in range(len(lista)):
-    print(lista[i])'''
+'''#for i in range(len(lista)):
+    #print(lista[i])
+'''
 
 ArbolFinal = lista.pop()
 #nodoArbol.inorden(ArbolFinal)   
@@ -149,4 +150,4 @@ l = []
 x, y =nodoArbol.camino(ArbolFinal, 'A', False, l)
 print(x, y)
 y.pop()
-print(y)
+print(y)'''
