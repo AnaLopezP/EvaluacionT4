@@ -61,8 +61,8 @@ print(a1_numero.info['Nombre'])
 for i in range(1, 800):
     a1_numero.insertar_nodo(lista[i], 'Numero')'''
 
-lista = []
-def crear_arbol(raiz, filtro):
+
+def crear_arbol(raiz, filtro, lista):
     for i in range(1, 800):
         raiz.insertar_nodo(lista[i], filtro)
     return raiz

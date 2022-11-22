@@ -73,9 +73,9 @@ def iniciar():
             a1_numero = arbol_pokemon.nodoArbol(lista[0])
             a2_nombre = arbol_pokemon.nodoArbol(lista[0])
             a3_tipo = arbol_pokemon.nodoArbol(lista[0])
-            Ejercicio2.crear_arbol(a1_numero, 'Numero')
-            Ejercicio2.crear_arbol(a2_nombre, 'Nombre')
-            Ejercicio2.crear_arbol(a3_tipo, 'Tipo 1')
+            Ejercicio2.crear_arbol(a1_numero, 'Numero', lista)
+            Ejercicio2.crear_arbol(a2_nombre, 'Nombre', lista)
+            Ejercicio2.crear_arbol(a3_tipo, 'Tipo 1', lista)
 
             numero_2 = []
             a1_numero.buscar_xnumero(2, numero_2)
@@ -104,12 +104,14 @@ def iniciar():
             print(tipo_planta)
 
             print('Los pokemons que son débiles a Jolteon son aquellos de tipo: agua y volador')
+            print('\n')
             deb_jolteon = []
             a3_tipo.buscar_xtipo('Water', deb_jolteon)
             a3_tipo.buscar_xtipo('Flying', deb_jolteon)
             print(deb_jolteon)
             print('\n')
             print('Los pokemons débiles a Lycanroc son los de tipo: Bicho, fuego, hielo y volador')
+            print('\n')
             deb_lycanroc = []
             a3_tipo.buscar_xtipo('Bug', deb_lycanroc)
             a3_tipo.buscar_xtipo('Fire', deb_lycanroc)
@@ -118,6 +120,7 @@ def iniciar():
             print(deb_lycanroc)
             print('\n')
             print('Como Tyrantrum es de tipo roca y dragón, es fuerte contra los mismos que Lycanroc más los que son débiles contra tipo dragón, que es el tipo dragón')
+            print('\n')
             deb_tyrantrum = deb_lycanroc
             a3_tipo.buscar_xtipo('Dragon', deb_tyrantrum)
             print(deb_tyrantrum)
