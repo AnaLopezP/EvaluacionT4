@@ -74,15 +74,34 @@ crear_arbol(a1_numero, 'Numero')
 crear_arbol(a2_nombre, 'Nombre')
 crear_arbol(a3_tipo, 'Tipo 1')
 
-'''numero_2 = []
+numero_2 = []
 a1_numero.buscar_xnumero(2, numero_2)
-print(numero_2)
 
 nombre = []
 a2_nombre.buscar_bien('h', nombre)
-print(nombre)
 
-tipo = []
-a3_tipo.buscar_xtipo('Fire', tipo)
-print(tipo)'''
+tipo_fuego = []
+a3_tipo.buscar_xtipo('Fire', tipo_fuego)
+print('-----------------------POKEMONS TIPO FUEGO---------------------------')
+print(tipo_fuego)
 
+tipo_electro = []
+a3_tipo.buscar_xtipo('Electric', tipo_electro)
+print('-------------------POKEMONS TIPO ELECTRO---------------------')
+print(tipo_electro)
+
+tipo_agua = []
+a3_tipo.buscar_xtipo('Water', tipo_agua)
+print('-------------------POKEMONS TIPO AGUA---------------------')
+print(tipo_agua)
+
+tipo_planta = []
+a3_tipo.buscar_xtipo('Grass', tipo_planta)
+print('-------------------POKEMONS TIPO PLANTA---------------------')
+print(tipo_planta)
+
+print('Los pokemons que son débiles a Jolteon son aquellos de tipo: agua y volador')
+deb_jolteon = []
+a3_tipo.buscar_xtipo('Water', deb_jolteon)
+a3_tipo.buscar_xtipo('Flying', deb_jolteon)
+print(deb_jolteon)
