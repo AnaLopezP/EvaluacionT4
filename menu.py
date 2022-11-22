@@ -1,10 +1,12 @@
 import Ejercicio1
 import Ejercicio2
+import arbol_pokemon
 import helpers
 from operator import itemgetter
+import pandas as pd
 
 def iniciar():
-    while True:
+    #while True:
         helpers.limpiar_pantalla()
 
         print("QUE EJERCICIO QUIERES VER:")
@@ -14,7 +16,7 @@ def iniciar():
         print("[4] Ninguno")
 
         decision = int(input("> "))
-        if decision == "1":
+        if decision == 1:
             frecuencias =  {'A': 0.2, 
                 'F': 0.17,
                 '1': 0.13,
@@ -50,6 +52,87 @@ def iniciar():
             ArbolFinal = lista.pop()
             #nodoArbol.inorden(ArbolFinal)   
             l = []
-            x, y = Ejercicio1.nodoArbol.camino(ArbolFinal, 'A', False, l)
+            print('¿Qué letra quieres encriptar?')
+            letra = input('> ')
+            x, y = Ejercicio1.nodoArbol.camino(ArbolFinal, letra, False, l)
             print(x, y)
             print(y)
+
+        if decision == 2:
+            df = pd.read_csv('pokemon.csv')
+            print(df)
+
+            lista = []
+            for i in df.iloc:
+                dicc = {}
+                dicc['Nombre'] = i['Name']
+                dicc['Tipo 1'] = i['Type 1']
+                dicc['Tipo 2'] = i['Type 2']
+                dicc['Numero'] = i['#']
+                lista.append(dicc)
+            a1_numero = arbol_pokemon.nodoArbol(lista[0])
+            a2_nombre = arbol_pokemon.nodoArbol(lista[0])
+            a3_tipo = arbol_pokemon.nodoArbol(lista[0])
+            Ejercicio2.crear_arbol(a1_numero, 'Numero')
+            Ejercicio2.crear_arbol(a2_nombre, 'Nombre')
+            Ejercicio2.crear_arbol(a3_tipo, 'Tipo 1')
+
+            numero_2 = []
+            a1_numero.buscar_xnumero(2, numero_2)
+
+            nombre = []
+            a2_nombre.buscar_bien('h', nombre)
+
+            tipo_fuego = []
+            a3_tipo.buscar_xtipo('Fire', tipo_fuego)
+            print('-----------------------POKEMONS TIPO FUEGO---------------------------')
+            print(tipo_fuego)
+
+            tipo_electro = []
+            a3_tipo.buscar_xtipo('Electric', tipo_electro)
+            print('-------------------POKEMONS TIPO ELECTRO---------------------')
+            print(tipo_electro)
+
+            tipo_agua = []
+            a3_tipo.buscar_xtipo('Water', tipo_agua)
+            print('-------------------POKEMONS TIPO AGUA---------------------')
+            print(tipo_agua)
+
+            tipo_planta = []
+            a3_tipo.buscar_xtipo('Grass', tipo_planta)
+            print('-------------------POKEMONS TIPO PLANTA---------------------')
+            print(tipo_planta)
+
+            print('Los pokemons que son débiles a Jolteon son aquellos de tipo: agua y volador')
+            deb_jolteon = []
+            a3_tipo.buscar_xtipo('Water', deb_jolteon)
+            a3_tipo.buscar_xtipo('Flying', deb_jolteon)
+            print(deb_jolteon)
+            print('\n')
+            print('Los pokemons débiles a Lycanroc son los de tipo: Bicho, fuego, hielo y volador')
+            deb_lycanroc = []
+            a3_tipo.buscar_xtipo('Bug', deb_lycanroc)
+            a3_tipo.buscar_xtipo('Fire', deb_lycanroc)
+            a3_tipo.buscar_xtipo('Ice', deb_lycanroc)
+            a3_tipo.buscar_xtipo('Flying', deb_lycanroc)
+            print(deb_lycanroc)
+            print('\n')
+            print('Como Tyrantrum es de tipo roca y dragón, es fuerte contra los mismos que Lycanroc más los que son débiles contra tipo dragón, que es el tipo dragón')
+            deb_tyrantrum = deb_lycanroc
+            a3_tipo.buscar_xtipo('Dragon', deb_tyrantrum)
+            print(deb_tyrantrum)
+            print('\n')
+            tipos = []
+            a3_tipo.tipos(tipos)
+            print('--------------------TIPOS DE POKEMONS---------------------')
+            print(tipos)
+
+            for i in tipos:
+                todos = []
+                a3_tipo.buscar_xtipo(i, todos)
+                print('\n')
+                print('NUMERO DE POKEMONS TIPO: ' + str(i))
+                print(len(todos))
+
+        input("\nPresiona ENTER  para continuar")
+iniciar()

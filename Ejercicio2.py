@@ -41,10 +41,10 @@ a3_tipo = cargar_arbol('Type 1')'''
 
 
 
-df = pd.read_csv('pokemon.csv')
+'''df = pd.read_csv('pokemon.csv')
 print(df)
 
-lista = []
+
 for i in df.iloc:
     dicc = {}
     dicc['Nombre'] = i['Name']
@@ -52,7 +52,7 @@ for i in df.iloc:
     dicc['Tipo 2'] = i['Type 2']
     dicc['Numero'] = i['#']
     lista.append(dicc)
-
+'''
 #print(lista)
 
 '''a1_numero = arbol_pokemon.nodoArbol(lista[0])
@@ -61,12 +61,13 @@ print(a1_numero.info['Nombre'])
 for i in range(1, 800):
     a1_numero.insertar_nodo(lista[i], 'Numero')'''
 
+lista = []
 def crear_arbol(raiz, filtro):
     for i in range(1, 800):
         raiz.insertar_nodo(lista[i], filtro)
     return raiz
 
-
+'''
 a1_numero = arbol_pokemon.nodoArbol(lista[0])
 a2_nombre = arbol_pokemon.nodoArbol(lista[0])
 a3_tipo = arbol_pokemon.nodoArbol(lista[0])
@@ -129,4 +130,4 @@ for i in tipos:
     a3_tipo.buscar_xtipo(i, todos)
     print('\n')
     print('NUMERO DE POKEMONS TIPO: ' + str(i))
-    print(len(todos))
+    print(len(todos))'''
