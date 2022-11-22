@@ -74,10 +74,15 @@ crear_arbol(a1_numero, 'Numero')
 crear_arbol(a2_nombre, 'Nombre')
 crear_arbol(a3_tipo, 'Tipo 1')
 
-numero_2 = []
+'''numero_2 = []
 a1_numero.buscar_xnumero(2, numero_2)
 print(numero_2)
 
 nombre = []
 a2_nombre.buscar_bien('h', nombre)
 print(nombre)
+
+tipo = []
+a3_tipo.buscar_xtipo('Fire', tipo)
+print(tipo)'''
+

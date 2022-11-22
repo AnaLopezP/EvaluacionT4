@@ -96,6 +96,20 @@ class nodoArbol(object):
 
         return lista
 
+    def buscar_xtipo(raiz, tipo, lista):
+        if tipo in raiz.info['Tipo 1']:
+            lista.append(raiz.info)
+            if raiz.der is not None:
+                nodoArbol.buscar_xtipo(raiz.der, tipo, lista)
+            if raiz.izq is not None:
+                nodoArbol.buscar_xtipo(raiz.izq, tipo, lista)
+        else:
+            if raiz.der is not None:
+                nodoArbol.buscar_xtipo(raiz.der, tipo, lista)
+            if raiz.izq is not None:
+                nodoArbol.buscar_xtipo(raiz.izq, tipo, lista)
+        return lista
+
     def inorden(raiz):
         '''
         Hace el barrido inorden del árbol
