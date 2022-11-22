@@ -80,9 +80,9 @@ class nodoArbol(object):
                 nodoArbol.buscar_bien(raiz.izq, caracter, lista)
         else:
             if raiz.der is not None:
-                nodoArbol.buscar_bien(raiz.der, caracter)
+                nodoArbol.buscar_bien(raiz.der, caracter, lista)
             if raiz.izq is not None:
-                nodoArbol.buscar_bien(raiz.izq, caracter)
+                nodoArbol.buscar_bien(raiz.izq, caracter, lista)
         return lista
     
     def buscar_xnumero(raiz, numero, lista):
