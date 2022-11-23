@@ -10,8 +10,8 @@ def iniciar():
         helpers.limpiar_pantalla()
 
         print("QUE EJERCICIO QUIERES VER:")
-        print("[1] Ejercicio 1")
-        print("[2] Ejercicio 2")
+        print("[1] Ejercicio 1: Huffman")
+        print("[2] Ejercicio 2: Pokemon")
         print("[3] Ejercicio 3")
         print("[4] Ninguno")
 
@@ -57,9 +57,9 @@ def iniciar():
                 numeros = []
                 x, y = Ejercicio1.nodoArbol.camino(ArbolFinal, letras[i], False, numeros)
                 asociados[letras[i]] = y
-            print(asociados)
+            #print(asociados)
             mensaje_encriptado = []
-            mensaje = input('Introduzca un mensaje a encriptar: ')
+            mensaje = input('Introduzca un mensaje a encriptar, con los caracteres A, F, 1, 3, 0, M, T: ')
             for i in mensaje:
                 if i in asociados:
                     mensaje_encriptado.append(asociados[i])
@@ -158,6 +158,13 @@ def iniciar():
             a2_nombre.ordenascendente(listanombre)
             for i in range(0, 5):
                 print(listanombre[i])
+
+            print('\n')
+            print('---------------------------------POKEMONS ORDENADOS POR NIVEL POR NOMBRE----------------------')
+            nombrenivel = []
+            a2_nombre.por_nivel(nombrenivel)
+            for i in range(0, 5):
+                print(nombrenivel[i])
 
         input("\nPresiona ENTER  para continuar")
 iniciar()

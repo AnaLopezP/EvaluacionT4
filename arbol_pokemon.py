@@ -128,7 +128,7 @@ class nodoArbol(object):
             nodoArbol.ordenascendente(raiz.der, listado)
         return listado
 
-    def por_nivel(raiz):
+    def por_nivel(raiz, listado):
         '''
         Realiza el barrido postorden del árbol
         '''
@@ -136,11 +136,12 @@ class nodoArbol(object):
         cola.Cola.arribo(pendientes, raiz)
         while not cola.Cola.cola_vacia(pendientes):
             nodo = cola.Cola.atencion(pendientes)
-            print(nodo.info)
+            listado.append(nodo.info)
             if nodo.izq is not None:
                 cola.Cola.arribo(pendientes, nodo.izq)
             if nodo.der is not None:
                 cola.Cola.arribo(pendientes, nodo.der)
+        return listado
 
 
     def tipos(raiz, lista):
