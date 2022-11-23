@@ -50,13 +50,25 @@ def iniciar():
                 print(lista[i])'''
 
             ArbolFinal = lista.pop()
-            #nodoArbol.inorden(ArbolFinal)   
-            l = []
-            print('¿Qué letra quieres encriptar?')
-            letra = input('> ')
-            x, y = Ejercicio1.nodoArbol.camino(ArbolFinal, letra, False, l)
-            print(x, y)
-            print(y)
+            #nodoArbol.inorden(ArbolFinal)  
+            asociados = {}
+            letras = ['A', 'F', '1', '3', '0', 'M', 'T']
+            for i in range(len(letras)):
+                numeros = []
+                x, y = Ejercicio1.nodoArbol.camino(ArbolFinal, letras[i], False, numeros)
+                asociados[letras[i]] = y
+            print(asociados)
+            mensaje_encriptado = []
+            mensaje = input('Introduzca un mensaje a encriptar: ')
+            for i in mensaje:
+                if i in asociados:
+                    mensaje_encriptado.append(asociados[i])
+            print('MENSAJE ENCRIPTADO:')
+            print(mensaje_encriptado)
+            cod = []
+            desencriptacion = Ejercicio1.desencriptar(mensaje_encriptado, asociados, cod)
+            print('MENSAJE DESENCRIPTADO:')
+            print(desencriptacion)
 
         if decision == 2:
             df = pd.read_csv('pokemon.csv')

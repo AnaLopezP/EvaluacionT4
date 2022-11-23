@@ -83,11 +83,8 @@ class nodoArbol(object):
     def camino(raiz, clave, encontrado, cadena):
         if raiz is not None:
             if raiz.der == None and raiz.izq == None:
-                print('He llegado a una hoja: ' + str(raiz.info))
                 if str(raiz.info.simbolo) == clave:
-                    print('La he encontrado: ' + str(raiz.info.simbolo))
                     encontrado = True 
-                    print('La cadena definitiva es: ' + str(cadena))
             else:
                 if not encontrado:
                     cadena.append('0')
@@ -102,6 +99,13 @@ class nodoArbol(object):
           
         return encontrado, cadena
 
+def desencriptar(mensajencriptado, asociados, cod_desen):
+    for i in mensajencriptado:
+        for j in asociados.keys():
+            if i == asociados[j]:
+                cod_desen.append(j)
+    return cod_desen
+        
 
 class info():
     def __init__(self, simbolo, frecuencia):
