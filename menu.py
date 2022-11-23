@@ -6,7 +6,7 @@ from operator import itemgetter
 import pandas as pd
 
 def iniciar():
-    #while True:
+    while True:
         helpers.limpiar_pantalla()
 
         print("QUE EJERCICIO QUIERES VER:")
