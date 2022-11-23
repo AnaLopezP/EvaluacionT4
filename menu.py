@@ -147,5 +147,17 @@ def iniciar():
                 print('NUMERO DE POKEMONS TIPO: ' + str(i))
                 print(len(todos))
 
+            print('-----------------------------POKEMONS ORDENADOS POR NUMERO DE MANERA ASCENDENTE--------------------------')
+            listanum = []
+            a1_numero.ordenascendente(listanum)
+            for i in range(0, 5):
+               print(listanum[i])
+            print('\n')
+            print('---------------------------POKEMONS ORDENADOS POR NOMBRE ASCENDENTE------------------------------')
+            listanombre = []
+            a2_nombre.ordenascendente(listanombre)
+            for i in range(0, 5):
+                print(listanombre[i])
+
         input("\nPresiona ENTER  para continuar")
 iniciar()

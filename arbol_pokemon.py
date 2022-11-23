@@ -119,6 +119,28 @@ class nodoArbol(object):
             print(raiz.info)
             nodoArbol.inorden(raiz.der)
 
+    def ordenascendente(raiz, listado):
+        if raiz is not None:
+            nodoArbol.ordenascendente(raiz.izq, listado)
+            listado.append(raiz.info)
+            nodoArbol.ordenascendente(raiz.der, listado)
+        return listado
+
+    def por_nivel(raiz):
+        '''
+        Realiza el barrido postorden del árbol
+        '''
+        pendientes = Cola()
+        Cola.arribo(pendientes, raiz)
+        while not Cola.cola_vacia(pendientes):
+            nodo = Cola.atencion(pendientes)
+            print(nodo.info)
+            if nodo.izq is not None:
+                Cola.arribo(pendientes, nodo.izq)
+            if nodo.der is not None:
+                Cola.arribo(pendientes, nodo.der)
+
+                
     def tipos(raiz, lista):
         '''
         Buscamos todos los tipos de pokemons que hay y los añadimos a una lista sin repetir
