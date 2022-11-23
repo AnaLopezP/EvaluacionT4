@@ -72,8 +72,6 @@ def iniciar():
 
         if decision == 2:
             df = pd.read_csv('pokemon.csv')
-            print(df)
-
             lista = []
             for i in df.iloc:
                 dicc = {}
