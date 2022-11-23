@@ -166,5 +166,12 @@ def iniciar():
             for i in range(0, 5):
                 print(nombrenivel[i])
 
+        if decision == 3:
+            print('En proceso...')
+
+        if decision == 4:
+            print('Saliendo')
+            break
+
         input("\nPresiona ENTER  para continuar")
 iniciar()
