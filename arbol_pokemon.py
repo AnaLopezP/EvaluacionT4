@@ -1,3 +1,5 @@
+import cola
+
 class nodoArbol(object):
     def __init__(self, info):
         self.izq= None
@@ -130,17 +132,17 @@ class nodoArbol(object):
         '''
         Realiza el barrido postorden del árbol
         '''
-        pendientes = Cola()
-        Cola.arribo(pendientes, raiz)
-        while not Cola.cola_vacia(pendientes):
-            nodo = Cola.atencion(pendientes)
+        pendientes = cola.Cola()
+        cola.Cola.arribo(pendientes, raiz)
+        while not cola.Cola.cola_vacia(pendientes):
+            nodo = cola.Cola.atencion(pendientes)
             print(nodo.info)
             if nodo.izq is not None:
-                Cola.arribo(pendientes, nodo.izq)
+                cola.Cola.arribo(pendientes, nodo.izq)
             if nodo.der is not None:
-                Cola.arribo(pendientes, nodo.der)
+                cola.Cola.arribo(pendientes, nodo.der)
 
-                
+
     def tipos(raiz, lista):
         '''
         Buscamos todos los tipos de pokemons que hay y los añadimos a una lista sin repetir
