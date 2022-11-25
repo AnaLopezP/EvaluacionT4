@@ -225,3 +225,15 @@ resetVisitados(grafo)
 grafo.pintar()
 resetVisitados(grafo)
 
+lista = ListaCatalogo()
+juntarDatosPaises(grafo, lista)
+if (lista.paisConDos()):
+  print("Existe un pais con dos tipos de maravillas")
+else :
+  print("NO Existe un pais con dos tipos de maravillas")
+
+if (lista.paisConDosDeUnTipo()):
+  print("Existe un pais con dos maravillas del mismo tipo")
+else :
+  print("NO Existe un pais con dos maravillas del mismo tipo")
+
