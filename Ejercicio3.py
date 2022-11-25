@@ -101,11 +101,16 @@ def resetVisitados(grafo):
 def relacionar(grafo):
     vertice = grafo.inicio
     while vertice is not None:
+        vertice2 = grafo.inicio
         if not vertice.visitado:
             vertice.visitado = True
-            mar = vertice.maravilla
-            if mar.nombre != 
-
+            while vertice2 is not None:
+                mar = vertice.maravilla
+                if mar.nombre != vertice.maravilla.nombre:
+                    if mar.compararTipo(vertice.maravilla) == True:
+                        vertice.insertarAdyacente(vertice2.maravilla, round(random.random()*1000, 2))
+                vertice2 = vertice2.sig
+            vertice = vertice.sig
 #CODIGO
 m1 = maravilla('MurallaChina', ['China'], 'ARQ')
 m2 = maravilla('Petra', ['Jordania'], 'ARQ')
