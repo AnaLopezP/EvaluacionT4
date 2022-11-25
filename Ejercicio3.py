@@ -205,6 +205,17 @@ def iniciarDatos():
 
     return grafo
 
+def juntarDatosPaises (grafo,catalogo):
+  vertice = grafo.inicio
+  while vertice is not None:
+    if not vertice.visitado:
+      vertice.visitado = True
+      for i in range (len(vertice.maravilla.pais)):
+          if not catalogo.estaEnCatalogo(vertice.maravilla.pais[i]):
+            catalogo.insertarPais(vertice.maravilla.pais[i])
+          catalogo.incrementarMaravilla(vertice.maravilla.pais[i],vertice.maravilla.tipo)
+      vertice = vertice.sig
+
 grafo = iniciarDatos()
 grafo.pintar()
 resetVisitados(grafo)
