@@ -21,3 +21,10 @@ class maravilla:
         self.nombre = nombre
         self.pais = pais
         self.tipo = tipo
+
+
+class Adyacente :
+    def __init__(self, info, distancia):
+        self.maravilla = info
+        self.sig = None
+        self.distancia = distancia
