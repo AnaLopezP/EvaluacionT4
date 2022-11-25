@@ -23,8 +23,16 @@ class maravilla:
         self.tipo = tipo
 
 
-class Adyacente :
+class Adyacente:
     def __init__(self, info, distancia):
         self.maravilla = info
         self.sig = None
         self.distancia = distancia
+
+class Grafo:
+    def __init__(self):
+        '''
+        crea un grafo vacío
+        '''
+        self.inicio = None
+        self.tamaño = 0
