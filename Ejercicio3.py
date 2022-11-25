@@ -28,6 +28,9 @@ class nodoVertice:
 
     '''Estas funciones las ponemos en esta clase y no en la clase de adyacentes porque añadimos adyacentes AL VERTICE'''
 
+    def __str__(self):
+        return str(self.maravilla.nombre)+ ' ' + str(self.maravilla.tipo) + ' ' + str(self.maravilla.pais) + ' vertices adyacentes: ' + str(cadena) 
+
 class maravilla:
     def __init__(self, nombre, pais, tipo):
         self.nombre = nombre
@@ -104,3 +107,6 @@ grafo.insertar(v4)
 grafo.insertar(v5)
 grafo.insertar(v6)
 grafo.insertar(v7)
+
+grafo.pintar()
+
