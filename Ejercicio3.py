@@ -216,7 +216,7 @@ def juntarDatosPaises (grafo,catalogo):
           catalogo.incrementarMaravilla(vertice.maravilla.pais[i],vertice.maravilla.tipo)
       vertice = vertice.sig
 
-grafo = iniciarDatos()
+'''grafo = iniciarDatos()
 grafo.pintar()
 resetVisitados(grafo)
 relacionar(grafo)
@@ -235,5 +235,5 @@ else :
 if (lista.paisConDosDeUnTipo()):
   print("Existe un pais con dos maravillas del mismo tipo")
 else :
-  print("NO Existe un pais con dos maravillas del mismo tipo")
+  print("NO Existe un pais con dos maravillas del mismo tipo")'''
 

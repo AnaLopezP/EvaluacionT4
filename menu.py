@@ -1,5 +1,6 @@
 import Ejercicio1
 import Ejercicio2
+import Ejercicio3
 import arbol_pokemon
 import helpers
 from operator import itemgetter
@@ -12,7 +13,7 @@ def iniciar():
         print("QUE EJERCICIO QUIERES VER:")
         print("[1] Ejercicio 1: Huffman")
         print("[2] Ejercicio 2: Pokemon")
-        print("[3] Ejercicio 3")
+        print("[3] Ejercicio 3: Las siete maravillas")
         print("[4] Ninguno")
 
         decision = int(input("> "))
@@ -167,7 +168,35 @@ def iniciar():
                 print(nombrenivel[i])
 
         if decision == 3:
-            print('En proceso...')
+            print('-----------------------DATOS 7 MARAVILLAS--------------------------')
+            print('Muralla China, en China, tipo arquitectonico')
+            print('Petra, en Jordania, tipo arquitectonico')
+            print('Coliseo, en Italia, tipo arquitectonico')
+            print('Chichen Izta, en Mexico, tipo arquitectonico')
+            print('Gran Cañon, en EEUU, tipo natural')
+            print('Cristo Redentor, en Brasil, tipo arquitectonico')
+            print('Taj Mahal, en India, tipo arquitectonico')
+            print('\n')
+            grafo = Ejercicio3.iniciarDatos()
+            grafo.pintar()
+            Ejercicio3.resetVisitados(grafo)
+            Ejercicio3.relacionar(grafo)
+            print('-----------------------------------------------')
+            Ejercicio3.resetVisitados(grafo)
+            grafo.pintar()
+            Ejercicio3.resetVisitados(grafo)
+
+            lista = Ejercicio3.ListaCatalogo()
+            Ejercicio3.juntarDatosPaises(grafo, lista)
+            if (lista.paisConDos()):
+                print("Existe un pais con dos tipos de maravillas")
+            else :
+                print("NO Existe un pais con dos tipos de maravillas")
+
+            if (lista.paisConDosDeUnTipo()):
+                print("Existe un pais con dos maravillas del mismo tipo")
+            else :
+                print("NO Existe un pais con dos maravillas del mismo tipo")
 
         if decision == 4:
             print('Saliendo')
