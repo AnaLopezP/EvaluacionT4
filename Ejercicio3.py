@@ -44,12 +44,18 @@ class maravilla:
         self.pais = pais
         self.tipo = tipo
 
+    def __str__(self):
+        return str(self.nombre +" "+ str(self.tipo) + " " + str(self.pais))
+
 
 class Adyacente:
     def __init__(self, info, distancia):
         self.maravilla = info
         self.sig = None
         self.distancia = distancia
+
+    def __str__(self):
+      return(str(self.maravilla) + " " + str(self.distancia))
 
 class Grafo:
     def __init__(self):
