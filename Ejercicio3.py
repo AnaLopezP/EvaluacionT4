@@ -64,6 +64,12 @@ class Grafo:
             self.tamaño += 1
             #sigue la misma logica que la funcion insertar adyacentes, pero con los vértices del grafo
         
+    def pintar(self):
+        vertice = self.inicio
+        while vertice is not None:
+            if not vertice.visitado:
+                print(str(vertice))
+                vertice = vertice.sig
 
 #CODIGO
 m1 = maravilla('MurallaChina', ['China'], 'ARQ')
