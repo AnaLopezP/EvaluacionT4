@@ -28,6 +28,13 @@ class nodoVertice:
 
     '''Estas funciones las ponemos en esta clase y no en la clase de adyacentes porque añadimos adyacentes AL VERTICE'''
 
+    def pintarAdyacentes(self):
+        cadena = ""
+        while self.adyacentes is not None:
+            cadena += str(self.adyacentes.maravilla) + " "+ str(self.adyacentes.distancia) 
+            self.adyacentes = self.adyacentes.sig
+        return cadena
+
     def __str__(self):
         return str(self.maravilla.nombre)+ ' ' + str(self.maravilla.tipo) + ' ' + str(self.maravilla.pais) + ' vertices adyacentes: ' + str(cadena) 
 
