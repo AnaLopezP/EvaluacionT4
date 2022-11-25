@@ -95,6 +95,61 @@ class Grafo:
                 print(str(vertice))
                 vertice = vertice.sig
 
+class ListaCatalogo:
+    def __init__(self):
+        self.inicio = None
+    
+    def insertarPais(self, pais):
+        nodo = Catalogo()
+        nodo.pais = pais
+        aux = self.inicio
+        nodo.sig = self.inicio
+        self.inicio = nodo
+
+    def estaEnCatalogo(self, pais):
+        esta = False
+        aux = self.inicio
+        while aux is not None:
+            if aux.pais == pais:
+                esta = True
+            aux = aux.sig
+        return esta
+
+    def incrementarMaravilla(self, pais, tipo):
+        aux = self.inicio
+        while aux is not None:
+            if aux.pais == pais:
+                if (tipo == "ARQ"):
+                    aux.numARQ += 1
+                else:
+                    aux.numNAT += 1
+            aux = aux.sig
+
+    def paisConDos(self):
+        existe = False
+        aux = self.inicio
+        while aux is not None:
+            if (aux.numARQ > 0 and aux.numNAT > 0):
+                existe = True
+            aux = aux.sig
+        return existe
+
+    def paisConDosDeUnTipo(self):
+        existe = False
+        aux = self.inicio
+        while aux is not None:
+            if (aux.numARQ > 1 or aux.numNAT > 1):
+                existe = True
+            aux = aux.sig
+        return existe 
+
+class Catalogo:
+    def __init__(self):
+        self.pais = None
+        self.numARQ = 0
+        self.numNAT = 0
+        self.sig = None
+
 def resetVisitados(grafo):
     vertice = grafo.inicio
     while vertice is not None:
@@ -112,45 +167,50 @@ def relacionar(grafo):
                     if mar.compararTipo(vertice.maravilla) == True: #comparamos que sea del mismo tipo con la funcion ya creada
                         vertice.insertarAdyacente(vertice2.maravilla, round(random.random()*1000, 2))#distancia aleatoria
                 vertice2 = vertice2.sig #comparame el nodo en el que estoy con los siguientes
-            vertice = vertice.sig #comparame el siguiente nodo desde el principio
+        vertice = vertice.sig #comparame el siguiente nodo desde el principio
 #CODIGO
-m1 = maravilla('MurallaChina', ['China'], 'ARQ')
-m2 = maravilla('Petra', ['Jordania'], 'ARQ')
-m3 = maravilla("Coliseo",["Italia"],"ARQ")
-m4 = maravilla("ChichenItza",["Mexico"],"ARQ")
-m5 = maravilla("Grancañon",["EEUU"],"NAT")
-m6 = maravilla("CristoRedentor",["Brasil"],"ARQ")
-m7 = maravilla("TajMahal",["India"],"ARQ")
+def iniciarDatos():
+    m1 = maravilla('MurallaChina', ['China'], 'ARQ')
+    m2 = maravilla('Petra', ['Jordania'], 'ARQ')
+    m3 = maravilla("Coliseo",["Italia"],"ARQ")
+    m4 = maravilla("ChichenItza",["Mexico"],"ARQ")
+    m5 = maravilla("Grancañon",["EEUU"],"NAT")
+    m6 = maravilla("CristoRedentor",["Brasil"],"ARQ")
+    m7 = maravilla("TajMahal",["India"],"ARQ")
 
-v1 = nodoVertice()
-v1.insertarMaravilla(m1)
-print("MARAVILLA 1 EN EL VERTITE 1: "+ v1.maravilla.nombre)
-v2 = nodoVertice()
-v2.insertarMaravilla(m2)
-v3 = nodoVertice()
-v3.insertarMaravilla(m3)
-v4 = nodoVertice()
-v4.insertarMaravilla(m4)
-v5 = nodoVertice()
-v5.insertarMaravilla(m5)
-v6 = nodoVertice()
-v6.insertarMaravilla(m6)
-v7 = nodoVertice()
-v7.insertarMaravilla(m7)
+    v1 = nodoVertice()
+    v1.insertarMaravilla(m1)
+    print("MARAVILLA 1 EN EL VERTITE 1: "+ v1.maravilla.nombre)
+    v2 = nodoVertice()
+    v2.insertarMaravilla(m2)
+    v3 = nodoVertice()
+    v3.insertarMaravilla(m3)
+    v4 = nodoVertice()
+    v4.insertarMaravilla(m4)
+    v5 = nodoVertice()
+    v5.insertarMaravilla(m5)
+    v6 = nodoVertice()
+    v6.insertarMaravilla(m6)
+    v7 = nodoVertice()
+    v7.insertarMaravilla(m7)
 
-grafo = Grafo()
-grafo.insertar(v1)
-grafo.insertar(v2)
-grafo.insertar(v3)
-grafo.insertar(v4)
-grafo.insertar(v5)
-grafo.insertar(v6)
-grafo.insertar(v7)
+    grafo = Grafo()
+    grafo.insertar(v1)
+    grafo.insertar(v2)
+    grafo.insertar(v3)
+    grafo.insertar(v4)
+    grafo.insertar(v5)
+    grafo.insertar(v6)
+    grafo.insertar(v7)
 
+    return grafo
+
+grafo = iniciarDatos()
 grafo.pintar()
 resetVisitados(grafo)
 relacionar(grafo)
 print('-----------------------------------------------')
 resetVisitados(grafo)
 grafo.pintar()
+resetVisitados(grafo)
 
