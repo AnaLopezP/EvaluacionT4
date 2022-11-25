@@ -63,4 +63,13 @@ class Grafo:
             self.inicio.sig = GrafoAux
             self.tamaño += 1
             #sigue la misma logica que la funcion insertar adyacentes, pero con los vértices del grafo
-            
+        
+
+#CODIGO
+m1 = maravilla('MurallaChina', ['China'], 'ARQ')
+m2 = maravilla('Petra', ['Jordania'], 'ARQ')
+m3 = maravilla("Coliseo",["Italia"],"ARQ")
+m4 = maravilla("ChichenItza",["Mexico"],"ARQ")
+m5 = maravilla("Grancañon",["EEUU"],"NAT")
+m6 = maravilla("CristoRedentor",["Brasil"],"ARQ")
+m7 = maravilla("TajMahal",["India"],"ARQ")
