@@ -16,6 +16,16 @@ class nodoVertice:
         '''
         self.maravilla = maravilla(mar.nombre, mar.pais, mar.tipo)
 
+    def insertarAdyacente(self, maravilla, distancia):
+        nodo = Adyacente(maravilla,distancia)
+        if self.adyacentes == None:
+            self.adyacentes = nodo #si el vertice no tiene ningun adyacente, lo ponemos y listo
+        else: 
+            #si ya hay adyacentes, incrustamos el nuevo al principio de la lista y desplazamos los demas
+            adyacenteAux = self.adyacentes
+            self.adyacentes = nodo
+            self.adyacentes.sig = adyacenteAux
+
 class maravilla:
     def __init__(self, nombre, pais, tipo):
         self.nombre = nombre
