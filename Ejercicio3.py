@@ -26,6 +26,8 @@ class nodoVertice:
             self.adyacentes = nodo
             self.adyacentes.sig = adyacenteAux
 
+    '''Estas funciones las ponemos en esta clase y no en la clase de adyacentes porque añadimos adyacentes AL VERTICE'''
+
 class maravilla:
     def __init__(self, nombre, pais, tipo):
         self.nombre = nombre
