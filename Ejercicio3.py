@@ -30,9 +30,10 @@ class nodoVertice:
 
     def pintarAdyacentes(self):
         cadena = ""
-        while self.adyacentes is not None:
-            cadena += str(self.adyacentes.maravilla) + " "+ str(self.adyacentes.distancia) 
-            self.adyacentes = self.adyacentes.sig
+        lista = self.adyacentes
+        while lista is not None:
+            cadena += str(lista.maravilla) + " "+ str(lista.distancia) 
+            lista = lista.sig
         return cadena
 
     def __str__(self):
@@ -46,7 +47,7 @@ class maravilla:
         self.tipo = tipo
 
     def __str__(self):
-        return str(self.nombre +" "+ str(self.tipo) + " " + str(self.pais))
+        return str(self.nombre) +" "+ str(self.tipo) + " " + str(self.pais)
 
     def compararTipo(self, nodo):
         if self.tipo == nodo.tipo:
@@ -90,6 +91,7 @@ class Grafo:
         vertice = self.inicio
         while vertice is not None:
             if not vertice.visitado:
+                vertice.visitado = True
                 print(str(vertice))
                 vertice = vertice.sig
 
@@ -147,4 +149,8 @@ grafo.insertar(v7)
 
 grafo.pintar()
 resetVisitados(grafo)
+relacionar(grafo)
+print('-----------------------------------------------')
+resetVisitados(grafo)
+grafo.pintar()
 
