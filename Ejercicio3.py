@@ -88,6 +88,12 @@ class Grafo:
                 print(str(vertice))
                 vertice = vertice.sig
 
+def resetVisitados(grafo):
+    vertice = grafo.inicio
+    while vertice is not None:
+        vertice.visitado = False
+        vertice = vertice.sig
+
 #CODIGO
 m1 = maravilla('MurallaChina', ['China'], 'ARQ')
 m2 = maravilla('Petra', ['Jordania'], 'ARQ')
@@ -123,4 +129,5 @@ grafo.insertar(v6)
 grafo.insertar(v7)
 
 grafo.pintar()
+resetVisitados(grafo)
 
