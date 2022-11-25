@@ -36,7 +36,8 @@ class nodoVertice:
         return cadena
 
     def __str__(self):
-        return str(self.maravilla.nombre)+ ' ' + str(self.maravilla.tipo) + ' ' + str(self.maravilla.pais) + ' vertices adyacentes: ' + str(cadena) 
+        cadena = self.pintarAdyacentes()
+        return str(self.maravilla.nombre)+ ' ' + str(self.maravilla.tipo) + ' ' + str(self.maravilla.pais) + ' vertices adyacentes: ' + cadena 
 
 class maravilla:
     def __init__(self, nombre, pais, tipo):
