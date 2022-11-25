@@ -48,3 +48,19 @@ class Grafo:
         '''
         self.inicio = None
         self.tamaño = 0
+
+    def insertar(self, dato):
+        '''
+        inserta vertices con un dato de una maravilla al grafo
+        '''
+        nodo = nodoVertice()
+        nodo.insertarMaravilla(dato.maravilla)
+        if self.inicio is None:
+            self.inicio = nodo
+        else:
+            GrafoAux = self.inicio
+            self.inicio = nodo
+            self.inicio.sig = GrafoAux
+            self.tamaño += 1
+            #sigue la misma logica que la funcion insertar adyacentes, pero con los vértices del grafo
+            
