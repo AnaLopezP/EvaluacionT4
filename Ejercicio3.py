@@ -162,12 +162,12 @@ def relacionar(grafo):
         if not vertice.visitado:
             vertice.visitado = True
             while vertice2 is not None: #Para comparar cada nodo (vertice) con los siguientes y los anteriores (vertice2)
-                mar = vertice.maravilla
+                mar = vertice2.maravilla
                 if mar.nombre != vertice.maravilla.nombre: #Para evitar que se relacione consigo mismo
                     if mar.compararTipo(vertice.maravilla) == True: #comparamos que sea del mismo tipo con la funcion ya creada
                         vertice.insertarAdyacente(vertice2.maravilla, round(random.random()*1000, 2))#distancia aleatoria
                 vertice2 = vertice2.sig #comparame el nodo en el que estoy con los siguientes
-        vertice = vertice.sig #comparame el siguiente nodo desde el principio
+            vertice = vertice.sig #comparame el siguiente nodo desde el principio
 #CODIGO
 def iniciarDatos():
     m1 = maravilla('MurallaChina', ['China'], 'ARQ')
