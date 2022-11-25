@@ -100,17 +100,17 @@ def resetVisitados(grafo):
         vertice = vertice.sig
 def relacionar(grafo):
     vertice = grafo.inicio
-    while vertice is not None:
-        vertice2 = grafo.inicio
+    while vertice is not None: #en este while relaciono comparando cada nodo con los demás
+        vertice2 = grafo.inicio #volvemos a coger el primer nodo para comparar con todos, no solo con los de abajo en la lista
         if not vertice.visitado:
             vertice.visitado = True
-            while vertice2 is not None:
+            while vertice2 is not None: #Para comparar cada nodo (vertice) con los siguientes y los anteriores (vertice2)
                 mar = vertice.maravilla
-                if mar.nombre != vertice.maravilla.nombre:
-                    if mar.compararTipo(vertice.maravilla) == True:
-                        vertice.insertarAdyacente(vertice2.maravilla, round(random.random()*1000, 2))
-                vertice2 = vertice2.sig
-            vertice = vertice.sig
+                if mar.nombre != vertice.maravilla.nombre: #Para evitar que se relacione consigo mismo
+                    if mar.compararTipo(vertice.maravilla) == True: #comparamos que sea del mismo tipo con la funcion ya creada
+                        vertice.insertarAdyacente(vertice2.maravilla, round(random.random()*1000, 2))#distancia aleatoria
+                vertice2 = vertice2.sig #comparame el nodo en el que estoy con los siguientes
+            vertice = vertice.sig #comparame el siguiente nodo desde el principio
 #CODIGO
 m1 = maravilla('MurallaChina', ['China'], 'ARQ')
 m2 = maravilla('Petra', ['Jordania'], 'ARQ')
