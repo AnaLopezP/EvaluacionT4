@@ -48,6 +48,11 @@ class maravilla:
     def __str__(self):
         return str(self.nombre +" "+ str(self.tipo) + " " + str(self.pais))
 
+    def compararTipo(self, nodo):
+        if self.tipo == nodo.tipo:
+            return True
+        else:
+            return False
 
 class Adyacente:
     def __init__(self, info, distancia):
