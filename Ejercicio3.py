@@ -98,6 +98,13 @@ def resetVisitados(grafo):
     while vertice is not None:
         vertice.visitado = False
         vertice = vertice.sig
+def relacionar(grafo):
+    vertice = grafo.inicio
+    while vertice is not None:
+        if not vertice.visitado:
+            vertice.visitado = True
+            mar = vertice.maravilla
+            if mar.nombre != 
 
 #CODIGO
 m1 = maravilla('MurallaChina', ['China'], 'ARQ')
