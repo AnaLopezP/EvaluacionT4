@@ -9,7 +9,12 @@ class nodoVertice:
         self.sig = None
         self.visitado = False
         self.adyacentes = None
-
+    
+    def insertarMaravilla(self, mar):
+        '''
+        insertamos un objeto maravilla de la clase maravilla
+        '''
+        self.maravilla = maravilla(mar.nombre, mar.pais, mar.tipo)
 
 class maravilla:
     def __init__(self, nombre, pais, tipo):
